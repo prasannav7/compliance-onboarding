@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title> Sample App </title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/sample.css"/>
+	
+</head>
+<body>
+	<h2><center> Sample app updates local and remote App Data Store</center></h2>
+
+	<div class="container">
+	  <form class="form-horizontal" role="form">
+	  	<div class="form-group">
+	      <label class="control-label col-sm-2" for="email" data-toggle="tooltip" title="Enter Object type, ex, system, product">Object Type:</label>
+	      <div class="col-sm-10">
+	        <input type="text" class="form-control" name="objectType" id="objectType" placeholder="system" value="system">
+	      </div>
+	    </div>
+	  	<div class="form-group">
+	      <label class="control-label col-sm-2" for="email" data-toggle="tooltip" title="Title for the system">Title:</label>
+	      <div class="col-sm-10">
+	        <input type="text" class="form-control" name="title" id="title" placeholder="Enter title" value="chrome book-1">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="comment">Description:</label>
+	      <div class="col-sm-10">
+		      <textarea class="form-control" rows="5" name="description" id="description" placeholder="Enter description">
+		      	sample description for chrome book-1</textarea>
+		  </div>
+	    </div>
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="pwd">Code</label>
+	      <div class="col-sm-10">          
+	        <input type="text" class="form-control" name="slug" id="code" placeholder="Enter code" value="chrome book-1">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="email">Primary Contact:</label>
+	      <div class="col-sm-10">
+	        <input type="email" class="form-control" name="contact" id="pcontact" placeholder="Enter email" value="user@example.com">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="email">Secondary Contact:</label>
+	      <div class="col-sm-10">
+	        <input type="email" class="form-control" name="scontact" id="scontact" placeholder="Enter email" value="user@example.com">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="putAndDelete">Id for Put, Delete, Get</label>
+	      <div class="col-sm-10">
+	        <input type="number" class="form-control" name="putAndDelete" id="putAndDelete" placeholder="" value="1">
+	      </div>
+	    </div>
+	  </form>
+	</div>
+	<center>
+    	<button id="submitData" class="btn btn-default">POST Data to ggrc-test</button>
+  	</center>
+
+	<hr />
+
+	<!--button onclick="popup()" value="Click Me!">Click Me</button-->
+	<!--button id="b0">Button1</button-->
+	<center>
+		<button id="b1" class="btn btn-default">Local GET ALL</button>
+		<button id="b2" class="btn btn-default">Local GET ONE</button>
+		<button id="b3" class="btn btn-default">Local POST</button>
+		<button id="b4" class="btn btn-default">Local PUT</button>
+		<button id="b5" class="btn btn-default">Local DELETE</button><br>
+		<span> Local Data: </span><br><br>	
+		<p id="info"></p>
+	</center>
+	<hr />
+	<center>
+		<button id="dummyGetAll" class="btn btn-default">Remote GET ALL</button>
+		<button id="dummyGet1" class="btn btn-default">Remote GET ONE</button>
+		<button id="dummyPost" class="btn btn-default">Remote POST</button>
+	    <button id="dummyPut" class="btn btn-default">Remote PUT</button><br>
+		<span> Remote Data: </span><br><br>
+		<p id="infoRemote"></p>
+	<center>
+
+	<script src="/static/sample.js"></script>
+
+	<script>
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip();   
+		});
+	</script>
+</body>
+
+</html>
